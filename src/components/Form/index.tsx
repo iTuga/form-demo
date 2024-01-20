@@ -47,7 +47,7 @@ function DemoForm () {
         return formik.touched[field] && formik.errors[field] && String(formik.errors[field]);
     };
 
-    const { patient, description, phone, hours, minutes } =
+    const { patient, description, phone } =
     formik.values || {};
 
     return (
