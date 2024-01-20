@@ -8,15 +8,16 @@ export default function AntdStariProvider({ children }: AntdStariProviderProps) 
       componentSize={'large'}
       theme={{
         token: {
-          colorPrimary: '#12a5bc',
-          colorInfo: '#12a5bc',
+          colorPrimary: '#00b4ff',
+          colorInfo: '#00b4ff',
           wireframe: false,
+          //fontFamily: 'Roboto',
         },
         components: {
           Slider: {
-            colorPrimary: '#12A5BC',
-            colorPrimaryBorder: '#12A5BC',
-            colorPrimaryBorderHover: '#12A5BC',
+            colorPrimary: '#00b4ff',
+            colorPrimaryBorder: '#00b4ff',
+            colorPrimaryBorderHover: '#00b4ff',
           },
           Layout: {
             colorBgHeader: '#ffffff',
@@ -32,11 +33,11 @@ export default function AntdStariProvider({ children }: AntdStariProviderProps) 
           },
           DatePicker: {
             controlOutline: 'rgba(0, 228, 228, 0.11)',
-            colorLink: '#12A5BC',
+            colorLink: '#00b4ff',
             colorTextDisabled: 'black',
           },
           Tag: {
-            colorBorder: '#12A5BC',
+            colorBorder: '#00b4ff',
           },
           Select: {
             colorTextDisabled: 'black',

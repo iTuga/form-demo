@@ -1,6 +1,43 @@
 .formWrapper {
-    min-width: 50%;
+    width: 100%;
+    max-width: 700px;
     background-color: white;
     padding: 30px;
     border-radius: 10px;
+    position: relative;
+    z-index: 5;
+    box-shadow: 1px 1px 20px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.form {
+}
+.submitted {
+    opacity: 0;
+    max-height: 200px;
+}
+.buttonWrapper {
+    margin: 20px 0 0;
+}
+.button {
+    width: 150px;
+    text-transform: uppercase;
+}
+.successBlock {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+}
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+.successIcon svg {
+    width: 50px;
+    height: 50px;
+    fill: green;
 }
