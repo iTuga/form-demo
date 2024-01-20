@@ -1,6 +1,8 @@
-import './globals.css'
+import '../styles/globals.css'
 import type { Metadata } from 'next'
 import { Questrial } from 'next/font/google'
+import StyledComponentsRegistry from "@/styles/antd/StyleRegistry";
+import AntdStariProvider from "@/styles/antd/AntdStariProvider";
 
 const inter = Questrial({ subsets: ['latin'], weight: '400'})
 
@@ -18,7 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <StyledComponentsRegistry>
+        <AntdStariProvider>
+          {children}
+        </AntdStariProvider>
+      </StyledComponentsRegistry>
+      </body>
     </html>
   )
 }
