@@ -55,6 +55,7 @@ function DemoForm () {
             <Form onFinish={formik.submitForm} className={`${styles.form} ${isSubmitted && styles.submitted}`}>
                 <Title level={3}>Appointment</Title>
                 <Form.Item
+                    className={styles.formItem}
                     label="Patient Chart"
                     labelCol={{span: 4}}
                     labelAlign={'left'}
@@ -68,6 +69,7 @@ function DemoForm () {
                     />
                 </Form.Item>
                 <Form.Item
+                    className={styles.formItem}
                     label="Description"
                     labelCol={{span: 4}}
                     labelAlign={'left'}
@@ -87,12 +89,18 @@ function DemoForm () {
                         <Select.Option value="demo">Description 5</Select.Option>
                     </Select>
                 </Form.Item>
-                <Form.Item label="Note" labelCol={{span: 4}} labelAlign={'left'}>
+                <Form.Item
+                    className={styles.formItem}
+                    label="Note"
+                    labelCol={{span: 4}}
+                    labelAlign={'left'}
+                >
                     <Input autoComplete="off" />
                 </Form.Item>
                 <Row justify={'space-between'}>
                     <Col span={12}>
                         <Form.Item
+                            className={styles.formItem}
                             label="Home Phone"
                             labelCol={{span: 8}}
                             labelAlign={'left'}
@@ -109,6 +117,7 @@ function DemoForm () {
                 <Row justify={'space-between'}>
                     <Col span={12}>
                         <Form.Item
+                            className={styles.formItem}
                             label="Work Phone"
                             labelCol={{span: 8}}
                             labelAlign={'left'}
@@ -126,28 +135,42 @@ function DemoForm () {
                         </Form.Item>
                     </Col>
                     <Col span={10}>
-                        <Form.Item label="Ext" labelCol={{span: 4}} labelAlign={'left'}>
+                        <Form.Item
+                            className={styles.formItem}
+                            label="Ext"
+                            labelCol={{span: 4}}
+                            labelAlign={'left'}
+                        >
                             <InputNumber autoComplete="off" />
                         </Form.Item>
                     </Col>
                 </Row>
                 <Row>
                     <Col span={6}>
-                        <Form.Item label="Alarm"  valuePropName="checked">
+                        <Form.Item
+                            className={styles.formItem}
+                            label="Alarm"
+                            valuePropName="checked"
+                        >
                             <Switch />
                         </Form.Item>
                     </Col>
                     <Col span={6}>
-                        <Form.Item label="Missed" valuePropName="checked">
+                        <Form.Item
+                            label="Missed"
+                            valuePropName="checked"
+                            className={styles.formItem}
+                        >
                             <Switch />
                         </Form.Item>
                     </Col>
                 </Row>
                 <Title level={3}>Length</Title>
                 <Row>
-                    <Col span={6}>
+                    <Col xs={12} sm={6}>
                         <Form.Item
                             label="Hours"
+                            className={styles.formItem}
                         >
                             <InputNumber
                                 max={23}
@@ -155,9 +178,10 @@ function DemoForm () {
                             />
                         </Form.Item>
                     </Col>
-                    <Col span={6}>
+                    <Col xs={12} sm={6}>
                         <Form.Item
                             label="Minutes"
+                            className={styles.formItem}
                         >
                             <InputNumber
                                 max={59}
@@ -166,14 +190,10 @@ function DemoForm () {
                         </Form.Item>
                     </Col>
                 </Row>
-                <Row justify={'center'} className={styles.buttonWrapper}>
-                    <Col span={6}>
-                        <Button className={styles.button} type={'primary'} htmlType="submit">Ok</Button>
-                    </Col>
-                    <Col span={6}>
-                        <Button className={styles.button}>Cancel</Button>
-                    </Col>
-                </Row>
+                <div className={styles.buttonWrapper}>
+                    <Button className={styles.button} type={'primary'} htmlType="submit">Ok</Button>
+                    <Button className={styles.button}>Cancel</Button>
+                </div>
             </Form>
             <div className={`${styles.successBlock} ${isSubmitted && styles.show}`}>
                 <CheckOutlined className={styles.successIcon}/>

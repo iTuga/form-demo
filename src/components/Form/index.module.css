@@ -9,14 +9,19 @@
     box-shadow: 1px 1px 20px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
-.form {
-}
+
 .submitted {
     opacity: 0;
     max-height: 200px;
 }
 .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px 0 0;
+}
+.buttonWrapper button {
+    margin: 0 10px 0;
 }
 .button {
     width: 150px;
@@ -40,4 +45,23 @@
     width: 50px;
     height: 50px;
     fill: green;
+}
+@media screen and (max-width: 1024px){
+    .formWrapper {
+        max-width: 95%;
+    }
+}
+@media screen and (max-width: 576px){
+    .formWrapper {
+        padding: 15px;
+    }
+    .form label {
+        max-height: 15px;
+    }
+    .formItem {
+        margin-bottom: 10px!important;
+    }
+    .successBlock {
+        width: 100%;
+    }
 }
