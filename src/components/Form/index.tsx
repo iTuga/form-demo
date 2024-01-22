@@ -98,13 +98,13 @@ function DemoForm () {
                         {...formik.getFieldProps(nameof({ description }))}
                         onChange={value => formik.setFieldValue(nameof({ description }), value)}
                     >
-                        <Select.Option value="demo">I don`t know</Select.Option>
-                        <Select.Option value="demo">Initial examination</Select.Option>
-                        <Select.Option value="demo">Neurological physical therapy</Select.Option>
-                        <Select.Option value="demo">Geriatric physical therapy</Select.Option>
-                        <Select.Option value="demo">Vestibular rehabilitation</Select.Option>
-                        <Select.Option value="demo">Orthopedic physical therapy</Select.Option>
-                        <Select.Option value="demo">Cardiovascular and pulmonary physical therapy</Select.Option>
+                        <Select.Option value="d1">I don`t know</Select.Option>
+                        <Select.Option value="d2">Initial examination</Select.Option>
+                        <Select.Option value="d3">Neurological physical therapy</Select.Option>
+                        <Select.Option value="d4">Geriatric physical therapy</Select.Option>
+                        <Select.Option value="d5">Vestibular rehabilitation</Select.Option>
+                        <Select.Option value="d6">Orthopedic physical therapy</Select.Option>
+                        <Select.Option value="d7">Cardiovascular and pulmonary physical therapy</Select.Option>
                     </Select>
                 </Form.Item>
                 <Form.Item
