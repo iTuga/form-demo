@@ -56,7 +56,7 @@ function DemoForm () {
                 <Title level={3}>Appointment</Title>
                 <Form.Item
                     className={styles.formItem}
-                    label="Patient Chart"
+                    label="Patient Name"
                     labelCol={{span: 4}}
                     labelAlign={'left'}
                     validateStatus={statusFor('patient')}
@@ -82,11 +82,13 @@ function DemoForm () {
                         {...formik.getFieldProps(nameof({ description }))}
                         onChange={value => formik.setFieldValue(nameof({ description }), value)}
                     >
-                        <Select.Option value="demo">Description 1</Select.Option>
-                        <Select.Option value="demo">Description 2</Select.Option>
-                        <Select.Option value="demo">Description 3</Select.Option>
-                        <Select.Option value="demo">Description 4</Select.Option>
-                        <Select.Option value="demo">Description 5</Select.Option>
+                        <Select.Option value="demo">I don't know</Select.Option>
+                        <Select.Option value="demo">Initial examination</Select.Option>
+                        <Select.Option value="demo">Neurological physical therapy</Select.Option>
+                        <Select.Option value="demo">Geriatric physical therapy</Select.Option>
+                        <Select.Option value="demo">Vestibular rehabilitation</Select.Option>
+                        <Select.Option value="demo">Orthopedic physical therapy</Select.Option>
+                        <Select.Option value="demo">Cardiovascular and pulmonary physical therapy</Select.Option>
                     </Select>
                 </Form.Item>
                 <Form.Item
@@ -101,24 +103,7 @@ function DemoForm () {
                     <Col span={12}>
                         <Form.Item
                             className={styles.formItem}
-                            label="Home Phone"
-                            labelCol={{span: 8}}
-                            labelAlign={'left'}
-                        >
-                            <Input
-                                autoComplete="off"
-                                prefix={'+'}
-                                placeholder="0000000000"
-                                maxLength={12}
-                            />
-                        </Form.Item>
-                    </Col>
-                </Row>
-                <Row justify={'space-between'}>
-                    <Col span={12}>
-                        <Form.Item
-                            className={styles.formItem}
-                            label="Work Phone"
+                            label="Phone"
                             labelCol={{span: 8}}
                             labelAlign={'left'}
                             validateStatus={statusFor('phone')}
@@ -145,51 +130,6 @@ function DemoForm () {
                         </Form.Item>
                     </Col>
                 </Row>
-                <Row>
-                    <Col span={6}>
-                        <Form.Item
-                            className={styles.formItem}
-                            label="Alarm"
-                            valuePropName="checked"
-                        >
-                            <Switch />
-                        </Form.Item>
-                    </Col>
-                    <Col span={6}>
-                        <Form.Item
-                            label="Missed"
-                            valuePropName="checked"
-                            className={styles.formItem}
-                        >
-                            <Switch />
-                        </Form.Item>
-                    </Col>
-                </Row>
-                <Title level={3}>Length</Title>
-                <Row>
-                    <Col xs={12} sm={6}>
-                        <Form.Item
-                            label="Hours"
-                            className={styles.formItem}
-                        >
-                            <InputNumber
-                                max={23}
-                                min={0}
-                            />
-                        </Form.Item>
-                    </Col>
-                    <Col xs={12} sm={6}>
-                        <Form.Item
-                            label="Minutes"
-                            className={styles.formItem}
-                        >
-                            <InputNumber
-                                max={59}
-                                min={0}
-                            />
-                        </Form.Item>
-                    </Col>
-                </Row>
                 <div className={styles.buttonWrapper}>
                     <Button className={styles.button} type={'primary'} htmlType="submit">Ok</Button>
                     <Button className={styles.button}>Cancel</Button>
@@ -197,13 +137,13 @@ function DemoForm () {
             </Form>
             <div className={`${styles.successBlock} ${isSubmitted && styles.show}`}>
                 <CheckOutlined className={styles.successIcon}/>
-                <Title level={2}>You have successfully submitted the form</Title>
+                <Title level={2}>Thanks for your request!  We are creating appointment for you and will send confirmation  soon!</Title>
                 <Button
                     type={'primary'}
                     htmlType="submit"
                     onClick={() => setIsSubmitted(false)}
                 >
-                    Send another one
+                    Create another appointment
                 </Button>
             </div>
         </div>
