@@ -12,7 +12,7 @@
 
 .submitted {
     opacity: 0;
-    max-height: 200px;
+    max-height: 300px;
 }
 .buttonWrapper {
     display: flex;
@@ -28,6 +28,7 @@
     text-transform: uppercase;
 }
 .successBlock {
+    width: 80%;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;

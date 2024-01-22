@@ -1,11 +1,12 @@
 'use client'
 import React, {useState} from 'react';
-import {Button, Col, Form, Input, InputNumber, Row, Select, Switch,} from 'antd';
+import {Button, Checkbox, Col, Form, Input, InputNumber, Row, Select, Switch,} from 'antd';
 import styles from './index.module.css'
 import Title from "antd/es/typography/Title";
 import {number, object as yup, string} from 'yup';
 import { useFormik } from 'formik';
 import {CheckOutlined} from "@ant-design/icons";
+import TextArea from "antd/es/input/TextArea";
 
 
 function DemoForm () {
@@ -27,8 +28,8 @@ function DemoForm () {
             formik.resetForm();
         },
         validationSchema: yup({
-            patient: string().trim().required('Enter Patient'),
-            description: string().required('Enter Description'),
+            patient: string().trim().required('Enter patient'),
+            description: string().required('Enter description'),
             phone: string()
                 .trim()
                 .required('Enter your work phone number')
@@ -54,20 +55,35 @@ function DemoForm () {
         <div className={styles.formWrapper}>
             <Form onFinish={formik.submitForm} className={`${styles.form} ${isSubmitted && styles.submitted}`}>
                 <Title level={3}>Appointment</Title>
-                <Form.Item
-                    className={styles.formItem}
-                    label="Patient Name"
-                    labelCol={{span: 4}}
-                    labelAlign={'left'}
-                    validateStatus={statusFor('patient')}
-                    help={helpFor('patient')}
-                >
-                    <Input
-                        autoComplete="off"
-                        value={patient}
-                        {...formik.getFieldProps(nameof({ patient }))}
-                    />
-                </Form.Item>
+                <Row justify={'space-between'}>
+                    <Col span={16}>
+                        <Form.Item
+                            className={styles.formItem}
+                            label="Patient name"
+                            labelCol={{span: 6}}
+                            labelAlign={'left'}
+                            validateStatus={statusFor('patient')}
+                            help={helpFor('patient')}
+                        >
+                            <Input
+                                autoComplete="off"
+                                value={patient}
+                                {...formik.getFieldProps(nameof({ patient }))}
+                            />
+                        </Form.Item>
+                    </Col>
+                    <Col span={6}>
+                        <Form.Item
+                            className={styles.formItem}
+                            label="I`m new patient"
+                            labelCol={{span: 16}}
+                            labelAlign={'left'}
+                        >
+                            <Checkbox />
+                        </Form.Item>
+                    </Col>
+                </Row>
+
                 <Form.Item
                     className={styles.formItem}
                     label="Description"
@@ -82,7 +98,7 @@ function DemoForm () {
                         {...formik.getFieldProps(nameof({ description }))}
                         onChange={value => formik.setFieldValue(nameof({ description }), value)}
                     >
-                        <Select.Option value="demo">I don't know</Select.Option>
+                        <Select.Option value="demo">I don`t know</Select.Option>
                         <Select.Option value="demo">Initial examination</Select.Option>
                         <Select.Option value="demo">Neurological physical therapy</Select.Option>
                         <Select.Option value="demo">Geriatric physical therapy</Select.Option>
@@ -97,7 +113,7 @@ function DemoForm () {
                     labelCol={{span: 4}}
                     labelAlign={'left'}
                 >
-                    <Input autoComplete="off" />
+                    <TextArea autoComplete="off" />
                 </Form.Item>
                 <Row justify={'space-between'}>
                     <Col span={12}>
@@ -137,7 +153,7 @@ function DemoForm () {
             </Form>
             <div className={`${styles.successBlock} ${isSubmitted && styles.show}`}>
                 <CheckOutlined className={styles.successIcon}/>
-                <Title level={2}>Thanks for your request!  We are creating appointment for you and will send confirmation  soon!</Title>
+                <Title level={2}>Thanks for your request!<br />  We are creating appointment and will send a confirmation to you soon!</Title>
                 <Button
                     type={'primary'}
                     htmlType="submit"
